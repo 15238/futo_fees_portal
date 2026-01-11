@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['matric'])) {
     header("Location: login.php");
     exit();
@@ -15,7 +16,7 @@ if (!isset($_SESSION['matric'])) {
 <body>
 
 <div class="container">
-    <h2>Welcome, <?php echo $_SESSION['matric']; ?></h2>
+    <h2>Welcome, <?php echo $_SESSION['username']; ?></h2>
 
     <a href="pay.php" class="btn">Pay School Fees</a>
     <a href="receipt.php" class="btn">View Latest Receipt</a>

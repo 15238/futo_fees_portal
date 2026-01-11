@@ -1,12 +1,7 @@
-<?php
-$servername = "localhost";
-$username = "root";   
-$password = "";       
-$dbname = "futo_fees_db";
+$lhost = "sql300.infinityfree.com";
+$dbuser = "if0_40877842";   
+$pass = "6fZk1bQKbU";       
+$db = "if0_40877842_futo_fees_portal_main";
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$connection = mysqli_connect($lhost, $dbuser, $pass, $db);
 
-if (!$conn) {
-    die("Database connection failed: " . mysqli_connect_error());
-}
-?>

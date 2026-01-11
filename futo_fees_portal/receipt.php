@@ -1,6 +1,16 @@
 <?php
 session_start();
-include "db/config.php";
+
+$lhost = "sql110.infinityfree.com";
+$dbuser = "if0_40877842";   
+$pass = "6fZk1bQKbU";       
+$db = "if0_40877842_futo_fees_portal_main";
+
+$connection = mysqli_connect($lhost, $dbuser, $pass, $db);
+
+if (!$connection) {
+    die("Database connection failed: " . mysqli_connect_error());
+}
 
 if (!isset($_SESSION['matric'])) {
     header("Location: login.php");
@@ -10,7 +20,7 @@ if (!isset($_SESSION['matric'])) {
 $matric = $_SESSION['matric'];
 
 // Get the most recent payment
-$query = mysqli_query($conn, "SELECT * FROM payments WHERE matric_no='$matric' ORDER BY id DESC LIMIT 1");
+$query = mysqli_query($connection, "SELECT * FROM payments WHERE matric_no='$matric' ORDER BY id DESC LIMIT 1");
 $data = mysqli_fetch_assoc($query);
 ?>
 
