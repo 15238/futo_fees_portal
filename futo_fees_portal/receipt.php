@@ -32,19 +32,19 @@ $data = mysqli_fetch_assoc($query);
 </head>
 <body>
 
-<div class="container">
-    <h2>Payment Receipt</h2>
+<div class="receipt-container">
+    <div class="receipt-card">
+        <h2>Payment Receipt</h2>
+        <hr>
 
-    <?php if ($data): ?>
-        <p><strong>Matric Number:</strong> <?php echo $matric; ?></p>
-        <p><strong>Amount Paid:</strong> ₦<?php echo $data['amount']; ?></p>
-        <p><strong>Reference:</strong> <?php echo $data['reference']; ?></p>
-        <p><strong>Date:</strong> <?php echo $data['date']; ?></p>
-    <?php else: ?>
-        <p>No payment record found.</p>
-    <?php endif; ?>
+        <p><strong>Student Name:</strong> <?php echo $_SESSION['username']; ?></p>
+        <p><strong>Matric Number:</strong> <?php echo $_SESSION['matric']; ?></p>
+        <p><strong>Amount Paid:</strong> ₦<?php echo $amount; ?></p>
+        <p><strong>Payment Date:</strong> <?php echo $date; ?></p>
+        <p><strong>Reference ID:</strong> <?php echo $reference; ?></p>
 
-    <a href="dashboard.php" class="btn">Back to Dashboard</a>
+        <button onclick="window.print()" class="print-btn">Print Receipt</button>
+    </div>
 </div>
 
 </body>

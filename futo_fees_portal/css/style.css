@@ -174,3 +174,120 @@ body {
 .back-home a:hover {
     text-decoration: underline;
 }
+
+.dashboard {
+    width: 90%;
+    max-width: 600px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.dashboard h2 {
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.icon {
+    font-size: 35px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.logout-card {
+    background: #ffe5e5;
+    color: #b00000;
+}
+
+.logout-card:hover {
+    background: #ffcccc;
+}
+
+/* RECEIPT PAGE */
+.receipt-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f4f4f4;
+}
+
+.receipt-card {
+    background: white;
+    width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.receipt-card h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.receipt-card hr {
+    margin-bottom: 20px;
+}
+
+.receipt-card p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.print-btn {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background: green;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.print-btn:hover {
+    background: darkgreen;
+}
+
+/* PRINT ONLY RECEIPT */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .receipt-card, .receipt-card * {
+        visibility: visible;
+    }
+
+    .receipt-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .print-btn {
+        display: none;
+    }
+}

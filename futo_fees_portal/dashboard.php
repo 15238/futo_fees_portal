@@ -15,12 +15,25 @@ if (!isset($_SESSION['matric'])) {
 </head>
 <body>
 
-<div class="container">
+<div class="dashboard">
     <h2>Welcome, <?php echo $_SESSION['username']; ?></h2>
 
-    <a href="pay.php" class="btn">Pay School Fees</a>
-    <a href="receipt.php" class="btn">View Latest Receipt</a>
-    <a href="logout.php" class="btn" style="background-color:red;">Logout</a>
+    <div class="cards">
+        <a href="pay.php" class="card">
+            <span class="icon">💳</span>
+            <p>Pay School Fees</p>
+        </a>
+
+        <a href="receipt.php" class="card">
+            <span class="icon">🧾</span>
+            <p>View Latest Receipt</p>
+        </a>
+
+        <a href="logout.php" class="card logout-card">
+            <span class="icon">🚪</span>
+            <p>Logout</p>
+        </a>
+    </div>
 </div>
 
 </body>
